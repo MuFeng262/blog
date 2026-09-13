@@ -29,7 +29,7 @@ export const siteConfig = {
 
   // 5. 首页照片墙预览图
   photoWallImage: "/covers/default.jpg",
-  cloudMusicIds: ["1809646618", "3361076230", "1859390262"],
+  cloudMusicIds: ["1809646618", "3361076230", "1859390262", "1973665667"],
   social: {
     github: "",
     gitee: "",
