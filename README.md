@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 博客
 
-## Getting Started
+个人博客站点，Next.js + Tailwind CSS 构建的毛玻璃（Glassmorphism）风格前端。
 
-First, run the development server:
+- 线上地址：<https://513613.qzz.io>
+- 站点内容：文章 / 杂谈 / 说说 / 归档 / 照片墙 / 音乐 / 友链 / 关于
+- 内容以 Markdown 存放在仓库内的 `posts/`、`chatters/`、`moments/` 目录，站点配置集中在 `siteConfig.ts`
+
+## 技术栈
+
+- **框架**：Next.js 16（App Router）
+- **样式**：Tailwind CSS 4
+- **内容解析**：gray-matter + remark/rehype（支持 Markdown 与 KaTeX 公式）
+- **动效**：framer-motion、three.js（@react-three/fiber）
+- **部署**：Vercel，域名经 Cloudflare 代理
+
+## 本地开发
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # 开发模式，默认 http://localhost:3000
+npm run build    # 生产构建
+npm start        # 运行生产构建
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 内容与配置
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| 路径 | 说明 |
+| --- | --- |
+| `posts/*.md` | 文章，frontmatter 支持 `title` / `date` / `description` / `cover` / `tags` |
+| `chatters/*.md` | 杂谈 |
+| `moments/*.md` | 说说（含 `images` 数组） |
+| `data/albums.ts` | 相册数据 |
+| `data/friends.ts` | 友链数据 |
+| `data/projects.ts` | 项目数据 |
+| `app/about/about.md` | 关于我 |
+| `siteConfig.ts` | 全站配置：站名、头像、背景、社交入口、弹幕、音乐等 |
+| `public/` | 静态资源（头像、背景图、封面等） |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 部署
 
-## Learn More
+推送到 `main` 分支后，Vercel 会自动构建并发布到生产环境，无需手动操作。
 
-To learn more about Next.js, take a look at the following resources:
+## 许可证
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+本项目基于 [XinghuisamaBlogs](https://github.com/heiehiehi/XinghuisamaBlogs)（CC BY-NC 4.0）二次修改使用，仅供个人非商业用途。
